@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="fadeToggleBtn">Fade Toggle</button>
+    <button id="slideToggleBtn">Slide Toggle</button>
+    <button id="animateBtn">Animate</button>
+    <button id="stopBtn">Stop Animation</button>
+    <button id="removeBtn">Remove</button>
+    <button id="appendBtn">Append</button>
+    <div id="box"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#fadeToggleBtn").click(function() {
+                $("#box").fadeToggle();
+            });
+
+            $("#slideToggleBtn").click(function() {
+                $("#box").slideToggle();
+            });
+
+            $("#animateBtn").click(function() {
+                $("#box").animate({
+                    width: "200px",
+                    height: "200px",
+                    opacity: 0.5
+                }, 1000);
+            });
+
+            $("#stopBtn").click(function() {
+                $("#box").stop();
+            });
+
+            $("#removeBtn").click(function() {
+                $("#box").remove();
+            });
+
+            $("#appendBtn").click(function() {
+                $("body").append('<div id="box" style="width: 100px; height: 100px; background-color: red; margin: 20px;"></div>');
+            });
+        });
+    </script>
+</body>
+</html>
